@@ -1,0 +1,229 @@
+/* 
+  Minimalistic, High-Polish Elegant Dark Theme for Streamlit Skill-to-Job Matching Platform
+  Scoped for clean dark typography, balanced spacing, and subtle borders.
+*/
+
+:root {
+  --primary: #E2E2E2;
+  --primary-accent: #FFFFFF;
+  --brand-indigo: #6366F1;
+  --brand-indigo-soft: rgba(99, 102, 241, 0.12);
+  --success: #22C55E;
+  --success-bg: rgba(34, 197, 94, 0.12);
+  --warning: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.12);
+  --border-light: #262626;
+  --border-subtle: #3F3F46;
+  --card-bg: #141414;
+  --card-bg-elevated: #1C1C1F;
+  --card-bg-hover: #27272A;
+  --bg-page: #0A0A0A;
+  --text-muted: #71717A;
+  --text-secondary: #A1A1AA;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+}
+
+/* Base Body Styling */
+body, .main, .stApp {
+  background-color: var(--bg-page) !important;
+  color: var(--primary) !important;
+}
+
+.main .block-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  max-width: 900px;
+}
+
+/* Clean Header */
+.app-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.app-title {
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--primary-accent);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.25rem;
+}
+
+.app-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Workflow Step Pills */
+.workflow-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  background-color: #0F0F0F;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.825rem;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.workflow-step.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.workflow-step-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.workflow-step.active .workflow-step-num {
+  background: var(--brand-indigo);
+  color: white;
+}
+
+/* Result Cards */
+.match-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.match-card:hover {
+  border-color: var(--border-subtle);
+}
+
+.match-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.match-role-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--primary-accent);
+}
+
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.score-high {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.score-mid {
+  background-color: var(--brand-indigo-soft);
+  color: #818CF8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.score-low {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Tags / Chips */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.skill-tag-matched {
+  background-color: #262626;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.skill-tag-missing {
+  background-color: rgba(225, 29, 72, 0.15);
+  color: #fda4af;
+  border: 1px solid rgba(225, 29, 72, 0.3);
+}
+
+/* Job Card */
+.job-listing-card {
+  background: var(--card-bg-elevated);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  transition: background-color 0.15s ease;
+}
+
+.job-listing-card:hover {
+  background-color: var(--card-bg-hover);
+  border-color: var(--border-subtle);
+}
+
+.job-meta-row {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.apply-button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--brand-indigo);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.apply-button-link:hover {
+  opacity: 0.9;
+}
